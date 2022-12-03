@@ -1,0 +1,434 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 10,
+    "passes": 10,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-12-03T03:18:34.350Z",
+    "end": "2022-12-03T03:18:51.738Z",
+    "duration": 10300,
+    "testsRegistered": 10,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a6cc8a71-e6fe-4ab6-b30a-7565be78671f",
+      "title": "",
+      "fullFile": "cypress/integration/data/data.js",
+      "file": "cypress/integration/data/data.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ba38bb2a-c011-48f5-a9c0-ff52de66b73b",
+          "title": "Data Driven Testing Using Excel FIle",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Data Driven: Register User",
+              "fullTitle": "Data Driven Testing Using Excel FIle Data Driven: Register User",
+              "timedOut": null,
+              "duration": 141,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('xlsxData').then(data => {\n  for (let i = 0; i < rowsLength; i++) {\n    cy.log(data.rows[i].firstName);\n    cy.log(data.rows[i].lastName);\n    cy.log(data.rows[i].username);\n    cy.log(data.rows[i].password);\n  }\n});",
+              "err": {},
+              "uuid": "c91a7ba1-bf4e-4ad4-8dac-ed9703a9df8e",
+              "parentUUID": "ba38bb2a-c011-48f5-a9c0-ff52de66b73b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c91a7ba1-bf4e-4ad4-8dac-ed9703a9df8e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 141,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "40103282-fb6b-4099-874a-7fa2722b72b8",
+      "title": "",
+      "fullFile": "cypress/integration/ownfleet-order/add-ownfleet-commands.spec.js",
+      "file": "cypress/integration/ownfleet-order/add-ownfleet-commands.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1bbfff86-cb9f-49ea-b8ce-846a22770a3a",
+          "title": "Ownfleet Order",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login as Manager",
+              "fullTitle": "Ownfleet Order Login as Manager",
+              "timedOut": null,
+              "duration": 538,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.loginAsMerchantManager(ownfleet_manager).then(response => {\n  expect(response.status).to.eql(200);\n  merchant_id = response.body.manager.merchantId;\n  manager_token = response.body.token;\n  cy.log(\"This is merchant ID: \" + merchant_id);\n  cy.log(\"This is manager token: \" + manager_token);\n});",
+              "err": {},
+              "uuid": "d7cd943c-c7d8-40a4-bdd6-de8da643e98e",
+              "parentUUID": "1bbfff86-cb9f-49ea-b8ce-846a22770a3a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d7cd943c-c7d8-40a4-bdd6-de8da643e98e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 538,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "f7ede681-41bf-488e-addc-d945165360e6",
+      "title": "",
+      "fullFile": "cypress/integration/ownfleet-order/add-ownfleet-order.spec.js",
+      "file": "cypress/integration/ownfleet-order/add-ownfleet-order.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "df510244-5bbc-47d5-a576-4d428a06a685",
+          "title": "Flow order ownfleet merchant",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "login As Merchant User",
+              "fullTitle": "Flow order ownfleet merchant login As Merchant User",
+              "timedOut": null,
+              "duration": 283,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"POST\",\n  url: '/auth/users/login',\n  headers: {\n    'Accept': 'application/json',\n    'Content-Type': 'application/json',\n    'User-Agent': 'ApiTestingKey_2a85813f'\n  },\n  body: ownfleet_user\n}).then(response => {\n  expect(response.status).to.eql(200);\n  token = response.body.token;\n  user_id = response.body.user.id;\n  cy.log(\"This is token: \" + token);\n  cy.log(\"This is user id: \" + user_id);\n});",
+              "err": {},
+              "uuid": "96d9c38e-ed94-41d5-8964-c3e1a3f3ec3a",
+              "parentUUID": "df510244-5bbc-47d5-a576-4d428a06a685",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add a ownfleet order",
+              "fullTitle": "Flow order ownfleet merchant Add a ownfleet order",
+              "timedOut": null,
+              "duration": 239,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"POST\",\n  url: `/users/${user_id}/orders`,\n  headers: {\n    'Accept': 'application/json',\n    'Content-Type': 'application/json',\n    'User-Agent': 'ApiTestingKey_2a85813f',\n    'x-access-token': token\n  },\n  body: add_ownfleet_payload\n}).then(response => {\n  cy.log(\"Add a ownfleet order boday: \" + JSON.stringify(response.body));\n  expect(response.status).to.eql(200);\n  order_id = response.body.orderId;\n  cy.log(\"This is order Id : \" + order_id);\n});",
+              "err": {},
+              "uuid": "ac43b282-772b-42be-9218-d782faf25779",
+              "parentUUID": "df510244-5bbc-47d5-a576-4d428a06a685",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login as Manager",
+              "fullTitle": "Flow order ownfleet merchant Login as Manager",
+              "timedOut": null,
+              "duration": 384,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"POST\",\n  url: \"/auth/managers/login\",\n  headers: {\n    'Accept': 'application/json',\n    'Content-Type': 'application/json',\n    'User-Agent': 'ApiTestingKey_2a85813f'\n  },\n  body: ownfleet_manager\n}).then(response => {\n  expect(response.status).to.eql(200);\n  merchant_id = response.body.manager.merchantId;\n  manager_token = response.body.token;\n  cy.log(\"This is merchant ID: \" + merchant_id);\n  cy.log(\"This is manager token: \" + manager_token);\n});",
+              "err": {},
+              "uuid": "6f1ec0fe-1bd1-411b-956a-66e13cbf37ef",
+              "parentUUID": "df510244-5bbc-47d5-a576-4d428a06a685",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Accept merchant order",
+              "fullTitle": "Flow order ownfleet merchant Accept merchant order",
+              "timedOut": null,
+              "duration": 160,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"PUT\",\n  url: `/stores/${merchant_id}/orders/${order_id}/accept`,\n  headers: {\n    'Accept': 'application/json',\n    'Content-Type': 'application/json',\n    'User-Agent': 'ApiTestingKey_2a85813f',\n    'x-access-token': manager_token\n  },\n  body: cookingTime\n}).then(response => {\n  expect(response.status).to.eql(200);\n});",
+              "err": {},
+              "uuid": "ad6bfd25-248e-40d0-ba71-10c521a4b520",
+              "parentUUID": "df510244-5bbc-47d5-a576-4d428a06a685",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Confirm merchant order",
+              "fullTitle": "Flow order ownfleet merchant Confirm merchant order",
+              "timedOut": null,
+              "duration": 124,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"PUT\",\n  url: `/stores/${merchant_id}/orders/${order_id}/confirm`,\n  headers: {\n    'Accept': 'application/json',\n    'Content-Type': 'application/json',\n    'User-Agent': 'ApiTestingKey_2a85813f',\n    'x-access-token': manager_token\n  }\n}).then(response => {\n  expect(response.status).to.eql(200);\n});",
+              "err": {},
+              "uuid": "7a916b57-814d-4789-98b1-f42423ca7f96",
+              "parentUUID": "df510244-5bbc-47d5-a576-4d428a06a685",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Done order ownfleer",
+              "fullTitle": "Flow order ownfleet merchant Done order ownfleer",
+              "timedOut": null,
+              "duration": 168,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"PUT\",\n  url: `/stores/${merchant_id}/orders/${order_id}/ship`,\n  headers: {\n    'Accept': 'application/json',\n    'Content-Type': 'application/json',\n    'User-Agent': 'ApiTestingKey_2a85813f',\n    'x-access-token': manager_token\n  }\n}).then(response => {\n  expect(response.status).to.eql(200);\n});",
+              "err": {},
+              "uuid": "c37cd275-fbd7-4cd8-a8f8-4a00e2653e52",
+              "parentUUID": "df510244-5bbc-47d5-a576-4d428a06a685",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "96d9c38e-ed94-41d5-8964-c3e1a3f3ec3a",
+            "ac43b282-772b-42be-9218-d782faf25779",
+            "6f1ec0fe-1bd1-411b-956a-66e13cbf37ef",
+            "ad6bfd25-248e-40d0-ba71-10c521a4b520",
+            "7a916b57-814d-4789-98b1-f42423ca7f96",
+            "c37cd275-fbd7-4cd8-a8f8-4a00e2653e52"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1358,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "02356fac-0970-4b0d-ab84-a88efea12411",
+      "title": "",
+      "fullFile": "cypress/integration/ownfleet-order/login-as-user.spec.js",
+      "file": "cypress/integration/ownfleet-order/login-as-user.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ff33c03b-bac9-4247-9b1c-b346993c0660",
+          "title": "Login as User",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login with incorrect password",
+              "fullTitle": "Login as User Login with incorrect password",
+              "timedOut": null,
+              "duration": 322,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.loginAsMerchantUser(ownfleet_incorrect_user).then(response => {\n  expect(response.status).to.eql(401);\n  expect(response.body.errors[0].message).to.eq(\"Incorrect password. Please try again.\");\n  cy.validateSchema(_loginSchema.errorLoginSchema, response.body);\n});",
+              "err": {},
+              "uuid": "8d4040fd-9bd3-45ae-ae98-8e1bf2d56b99",
+              "parentUUID": "ff33c03b-bac9-4247-9b1c-b346993c0660",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8d4040fd-9bd3-45ae-ae98-8e1bf2d56b99"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 322,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "2af97460-3d96-4094-8987-54a4cedc88f7",
+      "title": "",
+      "fullFile": "cypress/integration/ui-tests/google-search.spec.js",
+      "file": "cypress/integration/ui-tests/google-search.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "689f4750-b6cf-4efb-a107-de17ad5a888b",
+          "title": "POM Example Best Practice",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should be to do google search",
+              "fullTitle": "POM Example Best Practice Should be to do google search",
+              "timedOut": null,
+              "duration": 7941,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://www.google.com/\");\n(0, _SearchPage.enterSearchText)(\"page object model\");\n(0, _SearchPage.clickOnSearchButton)();",
+              "err": {},
+              "uuid": "87133727-e06f-4709-97c2-dfeb7d75f80e",
+              "parentUUID": "689f4750-b6cf-4efb-a107-de17ad5a888b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "87133727-e06f-4709-97c2-dfeb7d75f80e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7941,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

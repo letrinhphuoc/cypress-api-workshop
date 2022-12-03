@@ -1,0 +1,9 @@
+{
+  "baseUrl": "baseUrl",
+  "video": false,
+  "projectId": "",
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "configFile": "reporter-config.json"
+  }
+}

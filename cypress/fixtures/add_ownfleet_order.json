@@ -1,0 +1,19 @@
+{
+    "merchantId": "abc",
+    "dishes": [{
+        "dishId": "abc",
+        "quantity": 2
+    }],
+    "memo": "abc",
+    "status": "READY",
+    "toPhone": "abc",
+    "toAddress": "Test Address",
+    "toAddressDetail": "4th floor, 31 Le Duan, P Ben Nghe, Q1, HCMC",
+    "toLocation": [
+        106.695663,
+        10.786166
+    ],
+    "payment": {
+        "method": "CASH"
+    }
+}
